@@ -1,0 +1,26 @@
+{
+  "name": "api_automation_framework_javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 5000",
+    "test_debug": "mocha --timeout 5000 --inspect",
+    "test_with_report": "mocha --timeout 5000 -- --reporter mochawesome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/register": "^7.24.6",
+    "chai": "4.3.4",
+    "mocha": "8.4.0",
+    "mochawesome": "^7.1.3",
+    "supertest": "6.1.6",
+    "dotenv": "^16.4.5",
+    "properties-reader": "^2.3.0"
+  }
+}
