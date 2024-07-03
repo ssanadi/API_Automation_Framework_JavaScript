@@ -27,7 +27,7 @@ jobs:
 
     - name: Set up environment variables
       run: |
-        echo "TOKEN=${{ secrets.TOKEN }}"
+        echo "TOKEN=${{ secrets.TOKEN }}" >> .env
 
     - name: Run tests
       run: npm run test_with_report
