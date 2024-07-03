@@ -27,13 +27,13 @@ jobs:
 
     - name: Set up environment variables
       run: |
-        echo "TOKEN=${{ secrets.TOKEN }}" > .env
+        echo "TOKEN=${{ secrets.TOKEN }}"
 
     - name: Run tests
       run: npm run test_with_report
 
     - name: Upload Mocha Awesome Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: mocha-awesome-report
         path: ./mochawesome-report/mochawesome.html

@@ -8,7 +8,6 @@ let userID;
 
 describe('Post User API Test', () => {
     it('Post - Create User Test /users', async () => {
-        console.log(createUserPayload);
         let res = await request(httpMethods.POST, routes.v2_users, createUserPayload)
         expect(res.body).to.not.be.empty;
         expect(res.status).equal(201);

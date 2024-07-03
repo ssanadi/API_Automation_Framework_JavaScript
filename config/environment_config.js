@@ -7,7 +7,7 @@ let properties = propertiesReader(`config/${environment}_env.properties`);
 const BASE_URL = properties.get('BASE_URL');
 
 //load environment variables
-const TOKEN = process.env.USER_TOKEN;
+const TOKEN = process.env.TOKEN;
 const REGION = process.env.REGION;
 const TENANT = process.env.TENANT;
 
