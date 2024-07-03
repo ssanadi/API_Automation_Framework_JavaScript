@@ -36,5 +36,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mocha-awesome-report
-        path: ./mochawesome-report/mochawesome.html
+        path: ./mochawesome-report/
         retention-days: 15
