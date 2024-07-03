@@ -1,20 +1,15 @@
 import { request } from "../helper/httpHelper.js";
 import { httpMethods } from "../resources/http_methods.js";
 import { routes } from "../resources/endpoints.js";
+import { createUserPayload } from "../resources/requests/usersPayload.js";
 import {expect, should} from "chai";
 
 let userID;
 
 describe('Post User API Test', () => {
     it('Post - Create User Test /users', async () => {
-        const payload =   {
-            name: "Test User",
-            email: `TestUser_${Math.floor(Math.random() *9999)}@harris.test`,
-            gender: "female",
-            status: "active"
-          }
-
-        let res = await request(httpMethods.POST, routes.v2_users, payload)
+        console.log(createUserPayload);
+        let res = await request(httpMethods.POST, routes.v2_users, createUserPayload)
         expect(res.body).to.not.be.empty;
         expect(res.status).equal(201);
         userID = res.body.id

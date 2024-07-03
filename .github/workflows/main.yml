@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   test:
@@ -28,6 +25,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Set up environment variables
+      run: |
+        echo "TOKEN=${{ secrets.TOKEN }}" > .env
+
     - name: Run tests
       run: npm run test_with_report
 
@@ -35,4 +36,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: mocha-awesome-report
-        path: ./mochawesome-report
+        path: ./mochawesome-report/mochawesome.html
+        retention-days: 15
