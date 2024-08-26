@@ -1,8 +1,10 @@
-import { token, base_url, tenant } from "../config/environment_config.js";
+import { token, base_url, tenant, retry_count } from "../config/environment_config.js";
 import { httpMethods } from "../resources/http_methods.js";
 import supertest  from "supertest";
 
 const apiClient = supertest(base_url);
+
+const invalidStatusCodes = new Set([408, 413, 429, 500, 502, 503, 504, 521, 522, 524]);
 
 function setHeader(request){
     request.set('Authorization', `Bearer ${token}`);
@@ -12,7 +14,7 @@ function setHeader(request){
     return request;
 }
 
-export async function request(method, endPoint, payload = null){
+export async function request(method, endPoint, payload = null ){
     let request;
 
     switch(method.toLowerCase()){
@@ -51,5 +53,15 @@ export async function request(method, endPoint, payload = null){
         
     }
 
-    return setHeader(request)
+    request.retry(retry_count, (err, resp) => {
+        if(err != null || err != undefined){
+            console.warn(`API call failed with error - ${err.code}, Retrying API call.`);
+        }
+        if(resp!=null && invalidStatusCodes.has(resp.status))
+        {
+            console.warn(`API call failed with ${resp.status} error code, Retrying API call.`);
+        }                    
+    });
+
+    return setHeader(request);
 }

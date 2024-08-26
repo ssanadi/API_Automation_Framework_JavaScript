@@ -5,6 +5,7 @@ var propertiesReader = require("properties-reader");
 let environment = process.env.ENVIRONMENT || 'qa';
 let properties = propertiesReader(`config/${environment}_env.properties`);
 const BASE_URL = properties.get('BASE_URL');
+const RETRY_COUNT = properties.get('RETRY_COUNT');
 
 //load environment variables
 const TOKEN = process.env.TOKEN;
@@ -15,5 +16,6 @@ module.exports = {
     token: TOKEN,
     region: REGION,
     tenant: TENANT,
-    base_url: BASE_URL
+    base_url: BASE_URL,
+    retry_count: RETRY_COUNT
 }
