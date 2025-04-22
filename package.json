@@ -18,6 +18,7 @@
     "@babel/register": "^7.24.6",
     "@faker-js/faker": "^8.4.1",
     "chai": "4.3.4",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.4.5",
     "mocha": "8.4.0",
     "mochawesome": "^7.1.3",
