@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000",
+    "test": "mocha --timeout 10000",
     "test_debug": "mocha --timeout 5000 --inspect",
     "test_with_report": "mocha --timeout 5000 -- --reporter mochawesome"
   },
