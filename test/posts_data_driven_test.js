@@ -49,6 +49,7 @@ describe('Advanced Data-Driven API Testing Demo', () => {
                 expect(response.status).equal(201);
                 expect(response.body).to.have.property('id');
                 expect(response.body.title).to.equal(testData.title);
+                expect(response.body.body).to.equal(testData.body);
                 expect(response.body.user_id).to.equal(userId);
                 
                 // Store created post ID
@@ -85,6 +86,7 @@ describe('Advanced Data-Driven API Testing Demo', () => {
             // Assertions
             expect(response.status).equal(201);
             expect(response.body.title).to.equal(resolvedData.title);
+            expect(response.body.body).to.equal(resolvedData.body);
             
             // Store created post ID
             createdPostIds.push(response.body.id);
@@ -118,6 +120,7 @@ describe('Advanced Data-Driven API Testing Demo', () => {
                 if (response.status === 201) {
                     createdPostIds.push(response.body.id);
                     expect(response.body.title).to.equal(testData.title);
+                    expect(response.body.body).to.equal(testData.body);
                     expect(response.body.user_id).to.equal(userId);
                 }
                 
@@ -160,6 +163,7 @@ describe('Advanced Data-Driven API Testing Demo', () => {
             // Assertions
             expect(response.status).equal(201);
             expect(response.body.title).to.equal(testData.title);
+            expect(response.body.body).to.equal(testData.body);
             
             // Store created post ID
             createdPostIds.push(response.body.id);
