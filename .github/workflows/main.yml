@@ -11,14 +11,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [19]
+        node-version: [20]
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -34,6 +34,7 @@ jobs:
 
     - name: Upload Mocha Awesome Report
       uses: actions/upload-artifact@v3
+      if: always()
       with:
         name: mocha-awesome-report
         path: ./mochawesome-report/
