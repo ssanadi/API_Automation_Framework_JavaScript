@@ -1,0 +1,26 @@
+{
+  "createPosts": [
+    {
+      "title": "Data-driven test post 1",
+      "body": "This is the body of data-driven test post 1 with some content for testing."
+    },
+    {
+      "title": "Data-driven test post 2",
+      "body": "This is the body of data-driven test post 2 with different content for testing."
+    }
+  ],
+  "createPostsNegative": [
+    {
+      "title": "",
+      "body": "This post has an empty title which should fail validation."
+    },
+    {
+      "title": "Valid title",
+      "body": ""
+    }
+  ],
+  "samplePost": {
+    "title": "Capio talio patria stabilis adficio aperiam torqueo tabgo.",
+    "body": "Blanditiis qui adipisci. Demens cultura vigilo. Cruentus id conor. Rerum traho tripudio. Auris sublime acer. Tui virtus agnitio. Similique arbitro vis. Umbra ventus vester. Triumphus vergo pariatur. Facere cedo adfero. Caute cinis est. Nulla conservo acsi. Triduana architecto super. Crinis caste suscipio. Molestiae amoveo apud. Celo et aperiam. Terminatio depopulo usque. Tempora defero est. Adinventitias vobis vorago."
+  }
+} 
