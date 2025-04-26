@@ -69,6 +69,10 @@ describe('Posts API Test Suite - Data Driven Approach', () => {
         expect(response.status).equal(200);
         expect(response.body.id).to.equal(createdPostId);
         expect(response.body.user_id).to.equal(userId);
+        
+        // Verify both title and body
+        expect(response.body).to.have.property('title');
+        expect(response.body).to.have.property('body');
     });
     
     // Data-driven test using multiple datasets
@@ -85,6 +89,7 @@ describe('Posts API Test Suite - Data Driven Approach', () => {
                 expect(response.status).equal(201);
                 expect(response.body).to.have.property('id');
                 expect(response.body.title).to.equal(testData.title);
+                expect(response.body.body).to.equal(testData.body);
                 expect(response.body.user_id).to.equal(userId);
             });
         });
@@ -123,5 +128,11 @@ describe('Posts API Test Suite - Data Driven Approach', () => {
         // We should have at least 1 post (the one we created with sample data)
         // Plus potentially more from data-driven tests
         expect(response.body.length).to.be.at.least(1);
+        
+        // Verify each post has a title and body
+        response.body.forEach(post => {
+            expect(post).to.have.property('title');
+            expect(post).to.have.property('body');
+        });
     });
 }); 
