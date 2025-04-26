@@ -1,0 +1,16 @@
+{
+  "postTemplates": [
+    {
+      "title": "Post with ${dynamicValue} in title",
+      "body": "This is a post with ${dynamicValue} in the body and also ${anotherValue}."
+    },
+    {
+      "title": "${category}: ${topic}",
+      "body": "This is a post about ${topic} in the ${category} category. Written by ${author} on ${date}."
+    }
+  ],
+  "userPostTemplate": {
+    "title": "Post by user ${userId}",
+    "body": "This post was created by user ${userId} with name ${userName}. Email: ${userEmail}."
+  }
+} 

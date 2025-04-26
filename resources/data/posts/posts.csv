@@ -1,0 +1,5 @@
+title,body,expected_status
+CSV-driven test post 1,This is the body of a CSV-driven test post 1 with content for testing,201
+CSV-driven test post 2,This is the body of a CSV-driven test post 2 with different content for testing,201
+,This post has an empty title which should fail validation,422
+Valid title,,422 
